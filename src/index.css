@@ -79,7 +79,12 @@ h1{
     background:rgba(0,0,0,0.1);
     padding: 10px 0;
     border-right: 1px solid rgba(0,0,0,0.2);
+    transform: translateX(-280px);
+    transition: transform .2s ease-in-out
+}
 
+.nav-opened{
+    transform: translateX(0px);
 }
 
 .menu-item{
@@ -87,7 +92,6 @@ h1{
     display: flex;
     align-items: center;
     border-radius: 0 50px 50px 0;
-    /* padding: 2px 0; */
     padding-left: 40px;
     font-size: 14px;
     font-weight: bold
@@ -98,6 +102,12 @@ h1{
 }
 
 main{
+    margin-left: 0px;
+    transition: margin .2s ease-in-out;
+
+}
+
+.slideMain{
     margin-left: 280px
 }
 
@@ -113,6 +123,7 @@ main{
 }
 
 .create-notes-input input{
+    width: 90%;
     height: 46px;
     border: 0;
     outline: 0;

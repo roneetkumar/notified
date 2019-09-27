@@ -7,7 +7,6 @@ export default class SideMenu extends Component {
 
     state = {
         menuItems: ["Notes", "Remindes", "Edit Label", "Archive", "Trash"],
-
     }
 
     renderSideMenuItems = () => {
@@ -15,8 +14,10 @@ export default class SideMenu extends Component {
     }
 
     render() {
+        const navOpen = this.props.navOpen ? "side-menu nav-opened" : "side-menu";
+
         return (
-            <ul className="side-menu">
+            <ul className={navOpen} >
                 {this.renderSideMenuItems()}
             </ul>
         )
