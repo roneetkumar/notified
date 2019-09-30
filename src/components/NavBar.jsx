@@ -14,7 +14,7 @@ export default class NavBar extends Component {
 
                 <div className="logo">
                     <span className="img"></span>
-                    <span className="heading">Keep</span>
+                    <span className="heading">Notified</span>
                 </div>
                 <SearchBar />
                 <div className="menu">ITEMS</div>

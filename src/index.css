@@ -14,12 +14,18 @@ h1{
 }
 
 .search-bar{
-    width: 722px;
+    width: 100%;
+    max-width: 722px;
     height: 48px;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    margin: auto
+}
+
+.menu{
+    margin-left:20px;
+    margin-right: 10px;
+    font-weight: bold
 }
 
 .nav-bar{
@@ -36,7 +42,7 @@ h1{
 }
 
 .menu-btn{
-    margin-left: 20px;
+    margin-left: 10px;
     fill: #fff;
     padding: 10px;
     border-radius: 50%;
@@ -80,7 +86,8 @@ h1{
     padding: 10px 0;
     border-right: 1px solid rgba(0,0,0,0.2);
     transform: translateX(-280px);
-    transition: transform .2s ease-in-out
+    transition: transform .2s ease-in-out;
+    z-index: 1;
 }
 
 .nav-opened{
@@ -92,7 +99,7 @@ h1{
     display: flex;
     align-items: center;
     border-radius: 0 50px 50px 0;
-    padding-left: 40px;
+    padding-left: 30px;
     font-size: 14px;
     font-weight: bold
 }
@@ -104,6 +111,7 @@ h1{
 main{
     margin-left: 0px;
     transition: margin .2s ease-in-out;
+    padding: 20px;
 
 }
 
@@ -112,12 +120,13 @@ main{
 }
 
 .create-notes-input{
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     height: 46px;
     border: 1px solid rgba(255,255,255,0.2);
     background: rgba(255,255,255,0.1);
     margin: auto;
-    margin-top: 30px;
+    margin-top: 10px;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -162,3 +171,25 @@ main{
     padding: 14px;
 }
 
+
+
+@media only screen and (max-width: 768px) {
+  main {
+    margin-left : 0 !important;
+  }
+
+  .side-menu{
+    transform: translateX(-280px) !important;
+  }
+}
+
+
+@media only screen and (max-width: 320px) {
+    .logo span.img{
+        display: none
+    }
+
+    .logo{
+        margin: 0
+    }
+}
