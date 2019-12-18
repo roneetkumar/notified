@@ -63,7 +63,7 @@ export default class App extends Component {
         const slideMain = this.state.navOpen ? "slideMain" : ''
 
         return (
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
                 <NavBar onClick={this.onMenuClick} />
                 <SideMenu navOpen={this.state.navOpen} />
                 <main className={slideMain}>
