@@ -9,7 +9,7 @@ export default class CreateNotes extends Component {
 
     noteInputHandler = (e) => {
         e.preventDefault();
-        this.props.onSubmit(this.state.notes)
+        this.props.onSubmit(this.state.notes);
     }
 
     render() {
@@ -24,10 +24,13 @@ export default class CreateNotes extends Component {
                                 this.setState({
                                     notes: [...this.state.notes, { title: e.target.value }]
                                 })
+                                e.target.value = ""
                             }
                         }
                     }
                 />
+
+                {/* <div className='input' contentEditable="true" aria-multiline="true" role="textbox" tabIndex="0" aria-label="Title" spellCheck="true" aria-placeholder="Take a note..."></div> */}
             </form>
         )
     }

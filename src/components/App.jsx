@@ -3,6 +3,8 @@ import NavBar from "./NavBar";
 import SideMenu from './SideMenu';
 import CreateNotes from './CreateNotes';
 import NotesList from "./NotesList";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+
 
 export default class App extends Component {
     state = {
@@ -22,20 +24,70 @@ export default class App extends Component {
         })
     }
 
+    router = () => {
+        return (
+            <Switch>
+                <Route
+                    exact path="/"
+                    render={() => (<Redirect to="/notes" />)}>
+                </Route>
+                <Route exact path="/notes">
+                    <h1 className="heading">Notes</h1>
+                    <CreateNotes
+                        onSubmit={this.noteSubmit} />
+                    <NotesList
+                        notes={this.state.notes} />
+                </Route>
+                <Route exact path="/reminders">
+                    <h1 className="heading">Reminders</h1>
+                    <Reminders />
+                </Route>
+                <Route exact path="/edit-label">
+                    <h1 className="heading">Edit-Label</h1>
+                    <EditLabel />
+                </Route>
+                <Route exact path="/archive">
+                    <h1 className="heading">Archive</h1>
+                    <Archive />
+                </Route>
+                <Route exact path="/trash">
+                    <h1 className="heading">Trash</h1>
+                    <Trash />
+                </Route>
+            </Switch>
+        )
+    }
+
     render() {
 
         const slideMain = this.state.navOpen ? "slideMain" : ''
 
         return (
-            <div>
+            <Router>
                 <NavBar onClick={this.onMenuClick} />
                 <SideMenu navOpen={this.state.navOpen} />
                 <main className={slideMain}>
-                    <CreateNotes onSubmit={this.noteSubmit} />
-                    <NotesList notes={this.state.notes} />
+                    {
+                        this.router()
+                    }
                 </main>
-            </div>
+            </Router>
         );
     }
 }
 
+function Reminders() {
+    return null
+}
+
+function EditLabel() {
+    return null;
+}
+
+function Archive() {
+    return null;
+}
+
+function Trash() {
+    return null;
+}

@@ -6,7 +6,7 @@ import SideMenuItems from "./SideMenuItems";
 export default class SideMenu extends Component {
 
     state = {
-        menuItems: ["Notes", "Remindes", "Edit Label", "Archive", "Trash"],
+        menuItems: ["Notes", "Reminders", "Edit-Label", "Archive", "Trash"],
     }
 
     renderSideMenuItems = () => {
