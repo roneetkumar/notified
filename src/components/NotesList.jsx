@@ -5,7 +5,7 @@ export default class NotesList extends Component {
 
     render() {
         const notes = () => {
-            return this.props.notes.map((n, i) => <Notes title={n.title} key={i} />)
+            return this.props.notes.map((note, i) => <Notes note={note} key={i} />)
         }
 
         return (

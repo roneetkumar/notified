@@ -34,7 +34,7 @@ export default class App extends Component {
                 <Route exact path="/notes">
                     <h1 className="heading">Notes</h1>
                     <CreateNotes
-                        onSubmit={this.noteSubmit} />
+                        onSubmit={this.noteSubmit} notes={this.state.notes} />
                     <NotesList
                         notes={this.state.notes} />
                 </Route>
@@ -59,7 +59,6 @@ export default class App extends Component {
     }
 
     render() {
-
         const slideMain = this.state.navOpen ? "slideMain" : ''
 
         return (
