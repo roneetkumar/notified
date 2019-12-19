@@ -139,6 +139,7 @@ main .heading {
     overflow: hidden;
     display: grid;
     grid-template-rows: max-content max-content;
+    transition: all 0.2s ease-in-out;
 }
 
 .create-notes-input input, .create-notes-input textarea {

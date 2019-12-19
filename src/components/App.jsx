@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 import SideMenu from './SideMenu';
 import CreateNotes from './CreateNotes';
 import NotesList from "./NotesList";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
 export default class App extends Component {
@@ -27,11 +27,7 @@ export default class App extends Component {
     router = () => {
         return (
             <Switch>
-                <Route
-                    exact path="/"
-                    render={() => (<Redirect to="/notes" />)}>
-                </Route>
-                <Route exact path="/notes">
+                <Route exact path="/">
                     <h1 className="heading">Notes</h1>
                     <CreateNotes
                         onSubmit={this.noteSubmit} notes={this.state.notes} />
