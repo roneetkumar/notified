@@ -5,7 +5,12 @@ export default class SideMenuItems extends Component {
     render() {
         return (
             <Link to={this.props.name.toLowerCase()}>
-                <li className="menu-item">{this.props.name}</li>
+                <li className="menu-item">
+                    {this.props.children}
+                    <span>
+                        {this.props.name}
+                    </span>
+                </li>
             </Link>
         )
     }

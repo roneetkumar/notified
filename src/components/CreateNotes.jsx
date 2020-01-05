@@ -10,19 +10,29 @@ export default class CreateNotes extends Component {
         inputState: false
     }
 
+    /* this func checks if the input state is false , then it will change it into true
+        
+    */  
+
+
     _onBlur = () => {
         if (this.state.inputState) {
+            if (this.state.tempTitle !== "" || this.state.tempContent !== "") {
+                this.setState({
+                    notes: [...this.props.notes, {
+                        title: this.state.tempTitle === "" ? "Untitled" : this.state.tempTitle,
+                        content: this.state.tempContent
+                    }],
+                })
+            }
             this.setState({
-                notes: [...this.props.notes, {
-                    title: this.state.tempTitle,
-                    content: this.state.tempContent
-                }],
                 inputState: false
             })
             this.props.onSubmit(this.state.notes);
         }
     }
 
+    // this func checks if the input state is false , then it will change it into true
     _onFocus = () => {
         if (!this.state.inputState) {
             this.setState({
@@ -57,13 +67,18 @@ export default class CreateNotes extends Component {
             >
 
                 {
+                    /* checks the inputState from the state object if its true
+                    it will show the input elemtent. to check i am using terinaty operator
+                    " ? : "
+                    */
                     this.state.inputState
                         ? <input
                             type="text"
                             placeholder="Title"
                             onKeyUp={(e) => this.setState({
                                 tempTitle: e.target.value
-                            })} /> : ""
+                            })} />
+                        : null
                 }
 
                 <textarea
